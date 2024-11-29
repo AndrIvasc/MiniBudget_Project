@@ -1,4 +1,5 @@
 from libs.add_entry import add_entry
+from libs.res_rep import print_rows, print_statistics
 # Main program and menu selection
 
 # Vartotojui leidžiam įvesti tokius duomenis - data(datetime arba tiesiog stringas), pajamų ar išlaidų pavadinimas(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas,
@@ -32,10 +33,13 @@ while True:
         add_entry("expense", expense_list)
         input("Press enter to continue...")
     elif user_input == '3':
+        print_rows(income_list, "income")
         input("Press enter to continue...")
     elif user_input == '4':
+        print_rows(expense_list, "expense")
         input("Press enter to continue...")
     elif user_input == '5':
+        print_statistics(income_list, expense_list)
         input("Press enter to continue...")
     elif user_input == 'q':
         print("Exiting the program. Goodbye!")

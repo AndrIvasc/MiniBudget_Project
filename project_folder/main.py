@@ -1,7 +1,7 @@
 from libs.add_entry import add_entry
 from libs.res_rep import print_rows, print_statistics
 from libs.search_func import search_biggest_spendings
-
+from libs.pickle_manipulation import save_data_to_pickle
 from libs.delete_func import delete_entry
 # Main program and menu selection
 
@@ -57,7 +57,8 @@ while True:
         search_biggest_spendings(expense_list, user_search_amount)
         input("Press enter to continue...")
     elif user_input == '7':
-
+        pickle_name = input("Enter file name with the preffix .pickle: ")
+        save_data_to_pickle(income_list, expense_list, pickle_name)
         input("Press enter to continue...")
     elif user_input == '8':
         delete_entry("income", income_list)

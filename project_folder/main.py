@@ -11,6 +11,10 @@ from libs.res_rep import print_rows, print_statistics
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą, pradžioje išvedus turimus duomenis su indekso numeriu,
 # tam galime panaudoti enumerate. Pabandykim bent dalį veiksmų kelti į funkcijas.
 
+# PAPILDYMAS: Kažkuriam etape prijungiam duomenų išsaugojimą į pickle failą.
+
+
+
 income_list = []
 expense_list = []
 
@@ -21,6 +25,10 @@ while True:
           "3. Print income rows\n"
           "4. Print expense rows\n"
           "5. Print statistics\n"
+          "6. Search for the biggest spendings over 100\n"
+          "7. Add data to a pickle file\n"
+          "8. Delete selected entry from income\n"
+          "9. Delete selected entry from expeces\n"
           "q - Exit programm\n"
           "Enter your choice:")
 
@@ -40,6 +48,18 @@ while True:
         input("Press enter to continue...")
     elif user_input == '5':
         print_statistics(income_list, expense_list)
+        input("Press enter to continue...")
+    elif user_input == '6':
+
+        input("Press enter to continue...")
+    elif user_input == '7':
+
+        input("Press enter to continue...")
+    elif user_input == '8':
+
+        input("Press enter to continue...")
+    elif user_input == '9':
+
         input("Press enter to continue...")
     elif user_input == 'q':
         print("Exiting the program. Goodbye!")

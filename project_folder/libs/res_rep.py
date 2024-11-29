@@ -1,4 +1,10 @@
-def print_rows(data_list, entry_type):
+def print_rows(data_list: list, entry_type: str):
+    """
+    Print rows from the given list
+    :param data_list: list
+    :param entry_type: str
+    :return:
+    """
     if not data_list:
         print(f"No {entry_type} entries to display.")
         return
@@ -8,7 +14,13 @@ def print_rows(data_list, entry_type):
         print(f"Date: {entry[0]}, Name: {entry[1]}, Amount: {entry[2]:.2f}")
 
 
-def print_statistics(income_list, expense_list):
+def print_statistics(income_list: list, expense_list: str):
+    """
+    Print statistics for two lists
+    :param income_list: list
+    :param expense_list: list
+    :return:
+    """
     total_income = sum(entry[2] for entry in income_list)
     total_expenses = sum(entry[2] for entry in expense_list)
     balance = total_income - total_expenses

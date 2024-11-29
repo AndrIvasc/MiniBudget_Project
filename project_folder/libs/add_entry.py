@@ -1,7 +1,12 @@
 from datetime import datetime
 
 
-def validate_date(date_input):
+def validate_date(date_input: datetime):
+    """
+    Validating date format
+    :param date_input: datetime
+    :return:
+    """
     try:
         valid_date = datetime.strptime(date_input, "%Y-%m-%d").date()
         return str(valid_date)
@@ -9,7 +14,13 @@ def validate_date(date_input):
         return None
 
 
-def add_entry(entry_type, data_list):
+def add_entry(entry_type: str, data_list: list):
+    """
+    Add entry to the given list
+    :param entry_type: str
+    :param data_list: list
+    :return:
+    """
     print(f"Adding a new {entry_type}:")
 
     date_input = input("Enter the date (YYYY-MM-DD): ")

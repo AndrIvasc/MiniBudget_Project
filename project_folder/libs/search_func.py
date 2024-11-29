@@ -1,4 +1,10 @@
-def search_biggest_spendings(expense_list, user_search_amount):
+def search_biggest_spendings(expense_list: list, user_search_amount: int):
+    """
+    Give an amount to search for higher spendings list
+    :param expense_list: list
+    :param user_search_amount: int
+    :return:
+    """
     big_spendings = [entry for entry in expense_list if entry[2] > user_search_amount]
 
     if not big_spendings:

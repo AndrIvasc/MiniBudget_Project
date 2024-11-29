@@ -1,6 +1,24 @@
+from datetime import datetime
+
+
+def validate_date(date_input):
+    try:
+        valid_date = datetime.strptime(date_input, "%Y-%m-%d").date()
+        return str(valid_date)
+    except ValueError:
+        return None
+
+
 def add_entry(entry_type, data_list):
     print(f"Adding a new {entry_type}:")
-    date = input("Enter the date (YYYY-MM-DD): ")
+
+    date_input = input("Enter the date (YYYY-MM-DD): ")
+
+    date = validate_date(date_input)
+    if not date:
+        print("Invalid date format. Please use YYYY-MM-DD. Entry not added.")
+        return
+
     name = input(f"Enter the {entry_type} name (e.g., salary, food): ")
 
     try:
@@ -12,6 +30,5 @@ def add_entry(entry_type, data_list):
         print("Invalid amount. Entry not added.")
         return
 
-    # Append the entry as a nested list [date, name, amount]
     data_list.append([date, name, amount])
     print(f"{entry_type.capitalize()} entry added successfully!\n")

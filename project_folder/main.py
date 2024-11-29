@@ -1,6 +1,8 @@
 from libs.add_entry import add_entry
 from libs.res_rep import print_rows, print_statistics
 from libs.search_func import search_biggest_spendings
+
+from libs.delete_func import delete_entry
 # Main program and menu selection
 
 # Vartotojui leidžiam įvesti tokius duomenis - data(datetime arba tiesiog stringas), pajamų ar išlaidų pavadinimas(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas,
@@ -58,10 +60,10 @@ while True:
 
         input("Press enter to continue...")
     elif user_input == '8':
-
+        delete_entry("income", income_list)
         input("Press enter to continue...")
     elif user_input == '9':
-
+        delete_entry("expense", expense_list)
         input("Press enter to continue...")
     elif user_input == 'q':
         print("Exiting the program. Goodbye!")

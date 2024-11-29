@@ -1,5 +1,6 @@
 from libs.add_entry import add_entry
 from libs.res_rep import print_rows, print_statistics
+from libs.search_func import search_biggest_spendings
 # Main program and menu selection
 
 # Vartotojui leidžiam įvesti tokius duomenis - data(datetime arba tiesiog stringas), pajamų ar išlaidų pavadinimas(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas,
@@ -25,7 +26,7 @@ while True:
           "3. Print income rows\n"
           "4. Print expense rows\n"
           "5. Print statistics\n"
-          "6. Search for the biggest spendings over 100\n"
+          "6. Search for the biggest spendings over given ammount\n"
           "7. Add data to a pickle file\n"
           "8. Delete selected entry from income\n"
           "9. Delete selected entry from expeces\n"
@@ -50,7 +51,8 @@ while True:
         print_statistics(income_list, expense_list)
         input("Press enter to continue...")
     elif user_input == '6':
-
+        user_search_amount = int(input("What amount over to you want to see your spendings? -> "))
+        search_biggest_spendings(expense_list, user_search_amount)
         input("Press enter to continue...")
     elif user_input == '7':
 
